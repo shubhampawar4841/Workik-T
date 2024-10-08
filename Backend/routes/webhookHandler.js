@@ -25,6 +25,4 @@ router.post('/webhook', (req, res) => {
   res.status(200).send('Webhook received successfully');
 });
 
-
-
 module.exports = router;
