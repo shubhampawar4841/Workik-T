@@ -2,6 +2,7 @@
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const webhookRoutes = require('./routes/webhook'); // Import the webhook routes
+const webhandler=require('./routes/webhookHandler')
 require('dotenv').config();
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.json());
 // Use auth routes
 app.use('/auth', authRoutes);
 app.use('/webhook', webhookRoutes); // Add webhook routes here
+app.use('/webhookhandler',webhandler);
 
 // Start server
 app.listen(PORT, () => {
