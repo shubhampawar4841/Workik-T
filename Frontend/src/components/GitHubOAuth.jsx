@@ -38,6 +38,10 @@ const GitHubOAuth = () => {
       <h1>Automatic GitHub PR Review System</h1>
       <button onClick={handleGitHubLogin}>Connect GitHub</button>
     </div>
+     <div className="container">
+     <h1>Automatic GitHub PR Review System</h1>
+     <button onClick={handleGitHubLogin}>Connect GitHub</button>
+   </div>
   );
 };
 
