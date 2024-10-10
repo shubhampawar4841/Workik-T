@@ -1,12 +1,18 @@
+// App.jsx
 import React from 'react';
-import GitHubAuth from './components/GitHubAuth';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import GitHubOAuth from './components/GitHubOAuth';
+import CreateWebhook from './components/CreateWebhook';
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <GitHubAuth />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<GitHubOAuth />} />
+        <Route path="/create-webhook" element={<CreateWebhook />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
