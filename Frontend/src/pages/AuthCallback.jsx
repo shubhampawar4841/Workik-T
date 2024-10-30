@@ -22,7 +22,17 @@ function AuthCallback() {
         });
     }
   }, [location.search]);
-
+  if (code) {
+      // Send the code to the backend to exchange for the access token
+      axios.get(`http://localhost:5000/auth/callback?code=${code}`)
+        .then((response) => {
+          setAccessToken(response.data.access_token);
+        })
+        .catch(() => {
+          setError('Failed to get access token');
+        });
+    }
+  }, [location.search]);
   return (
     <div>
       {accessToken ? (
