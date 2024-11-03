@@ -8,5 +8,3 @@ const api = axios.create({
 export const getAuthToken = (code) => {
   return api.post('/auth/github', { code });
 };
-
-// Other API endpoints for token, PR review, etc.
